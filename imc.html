@@ -1,0 +1,13 @@
+<h1>Calcula IMC</h1>
+
+<script src="lib.js"></script>
+
+<script>
+    var textoPrompt = "Digite seu peso"
+    const peso = pegaNumero()
+
+    textoPrompt = "Digite sua altura"
+    const altura = pegaNumero()
+    const imc = peso / Math.pow(altura, 2)
+    document.write("O IMC é: " + imc.toFixed(2))
+</script>

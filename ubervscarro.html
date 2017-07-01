@@ -1,0 +1,42 @@
+<h1>
+    Uber vs Carro
+</h1>
+<h2>Uber X</h2>
+
+<script src="lib.js"></script>
+
+<script>
+    
+
+
+    //TODO usar a Application Programming Interface (API) Google Maps
+    var textoPrompt = "Digite a distancia"
+    const distancia = pegaNumero()
+    const precoDistanciaUber = 1.40 * distancia
+    const precoTempoUber = 0.26 * ((distancia / 25)*60)
+    const totalUber = precoTempoUber + precoDistanciaUber
+    var valorMoeda = totalUber
+    document.write("Total:"+  formataMoeda() + " (R$ 0,26 por minuto e R$ 1,40 por km)<br>")
+</script>
+<br>
+<h2>Carro</h2>
+<script>
+    const totalEstacionamento = 15
+    textoPrompt = "Digite o preço da gasolina"
+    const precoGasolina = pegaNumero()
+
+    textoPrompt = "Digite o preço do consumo"
+    const consumo = pegaNumero()
+
+    //fracamente tipada
+    const totalCombustivel = precoGasolina * (distancia / consumo)
+
+    valorMoeda = totalEstacionamento
+    document.write(formataMoeda() +  " de estacionamento<br>")
+    valorMoeda = totalCombustivel
+    document.write(formataMoeda() + "  de combustível<br>")
+
+    const totalCarro = totalEstacionamento + totalCombustivel
+    valorMoeda = totalCarro
+    document.write("Total:"+ formataMoeda()  + "<br>")
+</script>
