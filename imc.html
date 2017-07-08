@@ -8,6 +8,21 @@
 
     textoPrompt = "Digite sua altura"
     const altura = pegaNumero()
+
+
     const imc = peso / Math.pow(altura, 2)
-    document.write("O IMC é: " + imc.toFixed(2))
+    document.write("O IMC é: " + imc.toFixed(2) + "<br>")
+
+    if (imc <= 18.5) {
+        document.write("Vai pro mc"  + "<br>")
+    }    
+
+    if ((imc > 18.5) && (imc < 25)) {
+        document.write("De boa"  + "<br>")
+    }
+    
+    if(imc >= 25){
+        document.write("Vai pra academia"  + "<br>")
+    }
+    
 </script>
