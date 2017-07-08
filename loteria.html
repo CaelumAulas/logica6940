@@ -1,0 +1,13 @@
+<h1>Loteria</h1>
+<script src="lib.js"></script>
+<script>
+    const chute = pegaNumero("Chuta aí")
+    const numeroSorteado = geraNumeroAleatorio(100)
+    if(chute == numeroSorteado){
+        document.write("Ganhou")
+    }
+    
+    if(chute != numeroSorteado){
+        document.write("Perdeu, era: " + numeroSorteado)
+    }
+</script>

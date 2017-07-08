@@ -16,3 +16,7 @@ function calculaPontos(nome) {
     document.write(nome + " tem " + pontos + " pontos" + "<br>")
     return pontos
 }
+
+function geraNumeroAleatorio(maximo) {
+    return parseInt(Math.random() * maximo)
+}
