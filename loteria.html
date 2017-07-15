@@ -1,5 +1,12 @@
-//TODO acentuar as coisas precisa funcionar
-//TODO pra que serve o while na maior parte do tempo
+<meta charset="utf-8">
+
+<style>
+    p {
+        color: red;
+        font-family: "Helvetica";
+        font-weight: bold;
+    }
+</style>
 
 <h1>Loteria</h1>
 
@@ -10,20 +17,29 @@
 <script src="http://192.168.133.128:8080/lib.js"></script>
 <script>
 
+//TODO acentuar as coisas precisa funcionar
+//TODO pra que serve o while na maior parte do tempo
     function executaJogo(){
-        var chute = pegaNumero("Chuta aí de 1 a 100") // 0
-        
-        //loop ou repetição ou laço
-        while(chute <= 0 || chute > 100 || isNaN(chute)){
-            chute = pegaNumero("Chute de novo. Tá errado!") //20
-        } 
 
-        const numeroSorteado = geraNumeroAleatorio(1 , 100)
+        const numeroSorteado = geraNumeroAleatorio(1,100)
 
-        if(chute == numeroSorteado){
-            mostra("Ganhou")
-        } else {
-            mostra("Perdeu, era: " +  numeroSorteado)
+        var chances = pegaNumero("Quantas chances")//5
+
+        var chanceAtual = 1
+        while(chanceAtual <= chances && chute != numeroSorteado){
+            var chute = pegaNumero("Chance " + chanceAtual)
+            while(chute <= 0 || chute > 100 || isNaN(chute)){
+                chute = pegaNumero("Chute de novo. Tá errado!")
+            } 
+            if(chute == numeroSorteado){
+                mostra("Ganhou")
+            }
+            chanceAtual = chanceAtual + 1 
         }
+
+        if(chute != numeroSorteado) {
+            mostra("Vc perdeu. Era: " + numeroSorteado)
+        }
+
     }
 </script>
