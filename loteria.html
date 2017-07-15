@@ -1,13 +1,29 @@
+//TODO acentuar as coisas precisa funcionar
+//TODO pra que serve o while na maior parte do tempo
+
 <h1>Loteria</h1>
-<script src="lib.js"></script>
+
+<button onclick="executaJogo()">
+    clique para jogar
+</button>
+
+<script src="http://192.168.133.128:8080/lib.js"></script>
 <script>
-    const chute = pegaNumero("Chuta aí")
-    const numeroSorteado = geraNumeroAleatorio(100)
-    if(chute == numeroSorteado){
-        document.write("Ganhou")
-    }
-    
-    if(chute != numeroSorteado){
-        document.write("Perdeu, era: " + numeroSorteado)
+
+    function executaJogo(){
+        var chute = pegaNumero("Chuta aí de 1 a 100") // 0
+        
+        //loop ou repetição ou laço
+        while(chute <= 0 || chute > 100 || isNaN(chute)){
+            chute = pegaNumero("Chute de novo. Tá errado!") //20
+        } 
+
+        const numeroSorteado = geraNumeroAleatorio(1 , 100)
+
+        if(chute == numeroSorteado){
+            mostra("Ganhou")
+        } else {
+            mostra("Perdeu, era: " +  numeroSorteado)
+        }
     }
 </script>

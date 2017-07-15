@@ -3,7 +3,7 @@ function formataMoeda() {
 }
 
 function pegaNumero(txt){
-    return parseFloat(prompt(txt).replace(",", "."))
+    return parseFloat( ( prompt(txt) || "" ) .replace(",", "."))
 }
 
 function calculaPontos(nome) {
@@ -17,6 +17,13 @@ function calculaPontos(nome) {
     return pontos
 }
 
-function geraNumeroAleatorio(maximo) {
-    return parseInt(Math.random() * maximo)
+function geraNumeroAleatorio(minimo, maximo) {
+        return parseInt(Math.random() * (maximo - minimo) + minimo)
+}
+
+function mostra(texto){
+    var tag = document.createElement("p")
+    tag.id = "resultado"
+    tag.innerHTML = texto
+    document.body.appendChild(tag)
 }
